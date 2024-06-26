@@ -1,0 +1,37 @@
+<div class="details_container">
+  <div class="info">
+    <h2>{{ component.name }}</h2>
+    <p>{{ component.description }}</p>
+  </div>
+
+  <div class="graphique">
+    <canvas baseChart
+            [datasets]="barChartData"
+            [labels]="barChartLabels"
+            [options]="barChartOptions"
+            [legend]="barChartLegend"
+            [type]="'bar'">
+    </canvas>
+  </div>
+<div class="pies">
+  <div class="graphique">
+    <canvas baseChart
+            [datasets]="pieChartDataIncidents"
+            [labels]="pieChartLabelsIncidents"
+            [options]="pieChartOptionsIncidents"
+            [legend]="pieChartLegend"
+            [type]="'pie'">
+    </canvas>
+  </div>
+  <div class="graphique">
+    <canvas baseChart
+            [datasets]="pieChartDataTickets"
+            [labels]="pieChartLabelsTickets"
+            [options]="pieChartOptionsTickets"
+            [legend]="pieChartLegend"
+            [type]="'pie'">
+    </canvas>
+  </div>
+</div>
+
+</div>

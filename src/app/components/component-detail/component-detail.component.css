@@ -1,0 +1,28 @@
+.details_container {
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+}
+
+.graphique {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.pies {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.pies .graphique{
+    background-color: aqua;
+}
+
+.pies canvas {
+    max-width: 100%;
+}
