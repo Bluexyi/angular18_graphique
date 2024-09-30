@@ -1,28 +1,95 @@
+.page {
+    display: flex;
+    justify-content: row;
+    flex-wrap: nowrap;
+}
+
+.info {
+    background-color: chocolate;
+    width: 250px;
+}
+
 .details_container {
     padding: 10px;
     display: flex;
-    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    min-width: 400px !important;
+    width: 100%;
+}
+
+.bars {
+    flex: 1 1 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: var(--bar-max-width); /* Limite maximale pour la largeur des graphiques en barres */
 }
 
 .graphique {
     overflow: hidden;
+    flex-grow: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    max-width: 100%;
+    height: auto;
+    background-color: antiquewhite;
+}
+
+.graphique canvas {
+    width: 100% !important;
+    height: auto !important;
+}
+
+.bars canvas {
+    max-width: var(--bar-max-width); /* Utilise la variable pour la largeur maximale des barres */
+    max-height: var(--bar-max-height); /* Utilise la variable pour la hauteur maximale des barres */
 }
 
 .pies {
+    flex: 1 1 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     gap: 10px;
+    max-width: var(--pie-max-width); /* Utilise la variable pour la largeur maximale des pies */
 }
 
-.pies .graphique{
-    background-color: aqua;
+.pies .graphique {
+    border: 2px solid purple;
+    flex-grow: 1;
+    max-width: 100%;
+    max-height: var(--pie-max-height); /* Utilise la variable pour la hauteur maximale des pies */
 }
 
 .pies canvas {
-    max-width: 100%;
+    max-width: var(--pie-max-width); /* Utilise la variable pour la largeur maximale des pies */
+    max-height: var(--pie-max-height); /* Utilise la variable pour la hauteur maximale des pies */
+}
+
+/* Media Query pour les écrans en mode paysage */
+@media (orientation: landscape) {
+    .details_container {
+        flex-direction: row; /* Les éléments s'alignent en ligne */
+    }
+
+    .bars {
+        flex: 1 1 50%; /* Le graphique en barres prend 50% de la largeur */
+        max-width: 50%;
+    }
+
+    .pies {
+        flex: 1 1 50%; /* Les graphiques en pies prennent 50% de la largeur */
+        max-width: 50%;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .pies .graphique {
+        width: 100%;
+    }
 }
