@@ -1,9 +1,0 @@
-<div *ngFor="let component of components; let i = index" class="component-item">
-    <div class="component-header" (click)="toggleComponent(i)">
-      {{ component.name }}
-    </div>
-    <div *ngIf="isOpened(i)" class="component-details">
-      <app-component-detail [component]="component"></app-component-detail>
-    </div>
-  </div>
-  

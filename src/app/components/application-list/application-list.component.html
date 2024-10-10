@@ -1,0 +1,9 @@
+<div *ngFor="let application of applications; let i = index" class="application-item">
+    <div class="application-header" (click)="toggleApplication(i)">
+      {{ application.name }}
+    </div>
+    <div *ngIf="isOpened(i)" class="application-details">
+      <app-application-detail [application]="application"></app-application-detail>
+    </div>
+  </div>
+  

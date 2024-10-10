@@ -4,14 +4,14 @@ import { BaseChartDirective } from 'ng2-charts';
 import { ChartOptions, ChartType } from 'chart.js';
 
 @Component({
-  selector: 'app-component-detail',
+  selector: 'app-application-detail',
   standalone: true,
   imports: [CommonModule, BaseChartDirective],
-  templateUrl: './component-detail.component.html',
-  styleUrls: ['./component-detail.component.css']
+  templateUrl: './application-detail.component.html',
+  styleUrls: ['./application-detail.component.css']
 })
-export class ComponentDetailComponent implements OnInit {
-  @Input() component: any;
+export class ApplicationDetailComponent implements OnInit {
+  @Input() application: any;
 
   private COLORS = ['blue', 'orange', 'green', 'red', 'purple', 'yellow'];
 
@@ -71,24 +71,24 @@ export class ComponentDetailComponent implements OnInit {
   public pieChartLegend = true;
 
   ngOnInit(): void {
-    this.barChartLabels = this.component.barData.labels;
-    this.barChartData = this.component.barData.data.map((dataset: any, index: number) => ({
+    this.barChartLabels = this.application.barData.labels;
+    this.barChartData = this.application.barData.data.map((dataset: any, index: number) => ({
       ...dataset,
       backgroundColor: this.COLORS[index % this.COLORS.length]
     }));
 
     this.pieChartDataIncidents = [
       {
-        data: this.component.pieDataIncidents,
-        backgroundColor: this.COLORS.slice(0, this.component.pieDataIncidents.length), // Couleurs personnalisées
+        data: this.application.pieDataIncidents,
+        backgroundColor: this.COLORS.slice(0, this.application.pieDataIncidents.length), // Couleurs personnalisées
         label: 'Incidents en cours'
       }
     ];
 
     this.pieChartDataTickets = [
       {
-        data: this.component.pieDataTickets,
-        backgroundColor: this.COLORS.slice(0, this.component.pieDataTickets.length), // Couleurs personnalisées
+        data: this.application.pieDataTickets,
+        backgroundColor: this.COLORS.slice(0, this.application.pieDataTickets.length), // Couleurs personnalisées
         label: 'État des tickets'
       }
     ];

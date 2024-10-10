@@ -4,17 +4,17 @@ import { Observable, of } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class ComponentDataService {
+export class ApplicationDataService {
 
   constructor() { }
 
-  getComponentData(): Observable<any[]> {
+  getApplicationData(): Observable<any[]> {
     // Données statiques simulant la réponse de l'API
     const data = [
       {
         id: 1,
-        name: 'Composant A',
-        description: 'Description du composant A',
+        name: 'Application A',
+        description: 'Description de l\'application A',
         barData: {
           labels: ['April', 'May', 'June'],
           data: [
@@ -27,8 +27,8 @@ export class ComponentDataService {
       },
       {
         id: 2,
-        name: 'Composant B',
-        description: 'Description du composant B',
+        name: 'Application B',
+        description: 'Description de l\'application B',
         barData: {
           labels: ['April', 'May', 'June'],
           data: [

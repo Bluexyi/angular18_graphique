@@ -1,13 +1,13 @@
-.component-item {
+.application-item {
     width: 100%;
     border-bottom: 1px solid #ddd;
   }
-  .component-header {
+  .application-header {
     padding: 10px;
     background-color: #f9f9f9;
     cursor: pointer;
   }
-  .component-details {
+  .application-details {
     padding: 10px;
     background-color: #fff;
   }
